@@ -1,0 +1,351 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="dozzer197">
+
+    <xacro:property name="body_frame_mesh" value="package://my_robot_description/meshes/dozzer/Body_frame.stl" />
+    <xacro:property name="station_mesh" value="package://my_robot_description/meshes/dozzer/Station.stl" />
+    <xacro:property name="boom_mesh" value="package://my_robot_description/meshes/dozzer/Boom1.stl" />
+    <xacro:property name="boom_cylinder_mesh" value="package://my_robot_description/meshes/dozzer/Boom_cylinder.stl" />
+    <xacro:property name="boom_cylinder2_mesh" value="package://my_robot_description/meshes/dozzer/Boom_cyliner2.stl" />
+    <xacro:property name="boom_piston1_mesh" value="package://my_robot_description/meshes/dozzer/boom_piston1.stl" />
+    <xacro:property name="boom_piston2_mesh" value="package://my_robot_description/meshes/dozzer/boom_piston2.stl" />
+    <xacro:property name="dipper_mesh" value="package://my_robot_description/meshes/dozzer/dipper2.stl" />
+    <xacro:property name="dipper_cylinder_mesh" value="package://my_robot_description/meshes/dozzer/Dipper_cylinder.stl" />
+    <xacro:property name="dipper_piston_mesh" value="package://my_robot_description/meshes/dozzer/dipper_piston1.stl" />
+    <xacro:property name="dog_bone_mesh" value="package://my_robot_description/meshes/dozzer/dog_bone1.stl" />
+    <xacro:property name="bucket_cylinder_mesh" value="package://my_robot_description/meshes/dozzer/Bucket_cylinder.stl" />
+    <xacro:property name="bucket_piston_mesh" value="package://my_robot_description/meshes/dozzer/bucket_piston2.stl" />
+    <xacro:property name="bucket_mesh" value="package://my_robot_description/meshes/dozzer/Bucket.stl" />
+    <xacro:property name="h_link_mesh" value="package://my_robot_description/meshes/dozzer/H_link1.stl" />
+    
+    <xacro:property name="body_frame_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="station_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="boom_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="boom_cylinder_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="boom_cylinder2_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="boom_piston1_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="boom_piston2_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="dipper_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="dipper_cylinder_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="dipper_piston_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="dog_bone_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="bucket_cylinder_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="bucket_piston_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="bucket_scale" value="0.1 0.1 0.1" />
+    <xacro:property name="h_link_scale" value="0.1 0.1 0.1" />
+
+    <link name="base_link">
+       <visual>
+          <geometry>
+            <mesh filename="${body_frame_mesh}" scale="${body_frame_scale}" />
+          </geometry>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <material name="grey">
+            <color rgba="0.9 0.9 0.9 1" />
+          </material>
+       </visual>
+    </link>
+
+    <link name="station">
+      <visual>
+         <geometry>
+            <mesh filename="${station_mesh}" scale="${station_scale}" />
+         </geometry>
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <material name="blue">
+           <color rgba="0 0 1 1" />
+         </material>
+      </visual>
+    </link>
+
+    <link name="boom">
+      <visual>
+        <geometry>
+            <mesh filename="${boom_mesh}" scale="${boom_scale}" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="red">
+            <color rgba="1 0 0 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name="boom_cylinder1">
+       <visual>
+         <geometry>
+           <mesh filename="${boom_cylinder_mesh}" scale="${boom_cylinder_scale}" />
+         </geometry>
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <material name="white">
+           <color rgba="1 1 1 1" />
+         </material>
+       </visual>
+    </link>
+
+
+    <link name="boom_cylinder2">
+       <visual>
+         <geometry>
+           <mesh filename="${boom_cylinder2_mesh}" scale="${boom_cylinder2_scale}" />
+         </geometry>
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <material name="white">
+           <color rgba="1 1 1 1" />
+         </material>
+       </visual>
+    </link>
+
+    <link name="boom_piston1">
+        <visual>
+          <geometry>
+             <mesh filename="${boom_piston1_mesh}" scale="${boom_piston1_scale}" />
+          </geometry>
+          <origin xyz="0 0 1.5" rpy="0 0 0" />
+          <material name="green">
+            <color rgba="0 1 0 1" />
+          </material>
+        </visual>
+    </link>
+
+
+    <link name="boom_piston2">
+        <visual>
+          <geometry>
+             <mesh filename="${boom_piston2_mesh}" scale="${boom_piston2_scale}" />
+          </geometry>
+          <origin xyz="0 0 1.5" rpy="0 0 0" />
+          <material name="green">
+            <color rgba="0 1 0 1" />
+          </material>
+        </visual>
+    </link>
+
+    <link name="dipper">
+       <visual>
+         <geometry>
+           <mesh filename="${dipper_mesh}" scale="${dipper_scale}" />
+         </geometry>
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <material name="white">
+           <color rgba="1 1 1 1" />
+         </material>
+       </visual>
+    </link>
+
+    <link name="dipper_cylinder">
+       <visual>
+         <geometry>
+           <mesh filename="${dipper_cylinder_mesh}" scale="${dipper_cylinder_scale}" />
+         </geometry>
+         <origin xyz="0 0 0" rpy="0 0 0" />
+         <material name="blue">
+         <color rgba="0 0 1 1" />
+         </material>
+       </visual>
+    </link>  
+
+    <link name="dog_bone">
+      <visual> 
+        <geometry>
+          <mesh filename="${dog_bone_mesh}" scale="${dog_bone_scale}" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="blue">
+          <color rgba="0 0 1 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name="bucket">
+      <visual>
+        <geometry>
+          <mesh filename="${bucket_mesh}" scale="${bucket_scale}" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="red">
+          <color rgba="1 0 0 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name="bucket_cylinder">
+      <visual>
+        <geometry>
+          <mesh filename="${bucket_cylinder_mesh}" scale="${bucket_cylinder_scale}" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="green">
+          <color rgba="0 1 0 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name="dipper_piston">
+      <visual>
+        <geometry>
+          <mesh filename="${dipper_piston_mesh}" scale="${dipper_piston_scale}" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="red">
+          <color rgba="1 0 0 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name="bucket_piston">
+      <visual>
+        <geometry>
+          <mesh filename="${bucket_piston_mesh}" scale="${bucket_piston_scale}" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="red">
+          <color rgba="1 0 0 1" />
+        </material>
+      </visual>
+    </link>
+
+    <link name="h_link">
+      <visual>
+        <geometry>
+          <mesh filename="${h_link_mesh}" scale="${h_link_scale}" />
+        </geometry>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <material name="black">
+          <color rgba="0 0 1" />
+        </material>
+      </visual>
+    </link>
+
+    <joint name="base_station" type="fixed">
+       <parent link="base_link" />
+       <child link="station" />
+       <origin xyz="-7.6 0 1.25" rpy="0 0 -1.57" />
+    </joint>
+
+    <joint name="station_boom" type="revolute">
+      <parent link="station" />
+      <child link="boom" />
+      <origin xyz="0 1.1 4.34" rpy="0 -1.57 3.14" />
+      <axis xyz="0 0 1" />
+      <limit lower="-0.426" upper="0.331" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+    </joint>
+
+    <joint name="station_boom_cylinder1" type="revolute">
+      <parent link="station" />
+      <child link="boom_cylinder1" />
+      <origin xyz="1 -2 1" rpy="-1.13 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="-1.57" upper="1.57" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+      <mimic joint="station_boom" multiplier="0.7" offset="0" />
+    </joint>
+
+    <joint name="station_boom_cylinder2" type="revolute">
+      <parent link="station" />
+      <child link="boom_cylinder2" />
+      <origin xyz="-1 -2 1" rpy="-1.13 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="-1.57" upper="1.57" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+      <mimic joint="station_boom" multiplier="0.7" offset="0" />
+
+    </joint>
+
+    <joint name="boom_cylinder1_piston1" type="prismatic">
+      <parent link="boom_cylinder1"/>
+      <child link="boom_piston1"/>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="0" upper="3.5" effort="5" velocity="2"/>
+      <mimic joint="station_boom" multiplier="-3.97" offset="0"/>
+
+    </joint>
+
+      <joint name="boom_cylinder2_piston2" type="prismatic">
+      <parent link="boom_cylinder2"/>
+      <child link="boom_piston2"/>
+      <origin xyz="0 0 0" rpy="1.57 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="0" upper="3.5" effort="5" velocity="2"/>
+      <mimic joint="station_boom" multiplier="-3.97" offset="0"/>
+      
+    </joint>
+
+    <joint name="boom_dipper" type="revolute">
+      <parent link="boom" />
+      <child link="dipper" />
+      <origin xyz="3.75 12 0" rpy="0 0 1.57" />
+      <axis xyz="0 0 1" />
+      <limit lower="-0.806" upper="-0.042" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+    </joint>
+
+    <joint name="boom_dipper_cylinder" type="revolute">
+      <parent link="boom" />
+      <child link="dipper_cylinder" />
+      <origin xyz="5.5 5.5 0" rpy="0 1.57 3.02" />
+      <axis xyz="1 0 0" />
+      <limit lower="-1.57" upper="1.57" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+      <mimic joint="boom_dipper" multiplier="0.01" offset="0" />
+    </joint>
+
+    <joint name="dipper_dog_bone" type="revolute">
+      <parent link="dipper" />
+      <child link="dog_bone" />
+      <origin xyz="1.0 4.65 0" rpy="0 0 1.663" />
+      <axis xyz="0 0 1" />
+      <limit lower="-1.57" upper="1.57" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+      <mimic joint="dipper_bucket" multiplier="0.7" offset="0"/>
+    </joint>
+
+    <joint name="dipper_bucket" type="revolute">
+      <parent link="dipper" />
+      <child link="bucket" />
+      <origin xyz="1.1 6.5 0" rpy="0 -1.57 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="-0.365" upper="0.704" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+    </joint>
+
+    <joint name="dipper_bucket_cylinder" type="revolute">
+      <parent link="dipper" />
+      <child link="bucket_cylinder" />
+      <origin xyz="1.8 -1.95 0" rpy="0.221 1.57 3.14" />
+      <axis xyz="1 0 0" />
+      <limit lower="-1.57" upper="1.57" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+      <mimic joint="dipper_bucket" multiplier="-0.1" offset="0"/>
+    </joint>
+
+    <joint name="dipper_cylinder_piston" type="prismatic">
+      <parent link="dipper_cylinder" />
+      <child link="dipper_piston" />
+      <origin xyz="0 -2.7 0" rpy="1.57 0 0" />
+      <axis xyz="0 0 1" />
+      <limit lower="0" upper="3.5" effort="5" velocity="2"/>
+      <mimic joint="boom_dipper" multiplier="2.6" offset="0"/>
+
+    </joint>
+
+    <joint name="bucket_cylinder_piston" type="prismatic">
+      <parent link="bucket_cylinder" />
+      <child link="bucket_piston" />
+      <origin xyz="0 -2.1 0" rpy="-1.57 0 0" />
+      <axis xyz="0 0 1" />
+      <limit lower="0.416" upper="-3.5" effort="5" velocity="2" />
+      <mimic joint="dipper_bucket" multiplier="-1.1" offset="0"/>
+    </joint>
+
+    <joint name="bucket_h_link" type="revolute">
+      <parent link="bucket" />
+      <child link="h_link" />
+      <origin xyz="0 0.25 -1.6" rpy="-2.8 0 0" />
+      <axis xyz="1 0 0" />
+      <limit lower="-1.57" upper="1.57" effort="5" velocity="2" />
+      <dynamics damping="0.2" friction="0.1" />
+      <mimic joint="dipper_bucket" multiplier="-0.9" offset="0"/>
+    </joint>
+
+</robot>
