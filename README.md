@@ -58,6 +58,8 @@ my_robot_description/
 │ └── display.launch.py
 ├── package.xml
 └── CMakeLists.txt
+<img width="1920" height="1080" alt="Screenshot from 2025-11-11 20-07-40" src="https://github.com/user-attachments/assets/4257d099-b58a-4e8d-baac-f4304aad8d62" />
+
 
 
 ---
@@ -75,4 +77,6 @@ ros2 launch urdf_tutorial display.launch.py model:=/home/ranjan/ros2_ws/src/my_r
 👨‍💻 Ranjan Tamang
 Robotics Engineer in progress | ROS2 | URDF | Fusion 360 | Python | Japan 🇯🇵
 GitHub: ranzant197
+
+
 
